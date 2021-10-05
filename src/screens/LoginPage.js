@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
+import BasicTextInput from "../components/BasicTextInput";
 import Button from "../components/Button";
 import {
   appBackgroundColorPrimary, flexCenterBasis, primaryBackground, secondaryBackground,
@@ -15,6 +16,7 @@ const LoginPage = ({ navigation }) => {
       <Text>Login Screen</Text>
       <Button color={primaryBackground} onPress={handleLogin} title="Button" />
       <Button color={secondaryBackground} onPress={handleLogin} title="Button" />
+      <BasicTextInput />
     </View>
   );
 };

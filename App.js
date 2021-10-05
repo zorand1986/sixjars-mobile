@@ -14,8 +14,8 @@ const App = () => (
   //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
   <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen name="Logout" component={LogoutPage} />
       <Stack.Screen name="Login" component={LoginPage} />
+      <Stack.Screen name="Logout" component={LogoutPage} />
     </Stack.Navigator>
   </NavigationContainer>
   // </SafeAreaView>
