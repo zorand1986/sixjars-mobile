@@ -1,11 +1,20 @@
-import React from 'react';
-import {View, Text, Button} from 'react-native';
+import React from "react";
+import { View, Text } from "react-native";
+import Button from "../components/Button";
+import {
+  appBackgroundColorPrimary, flexCenterBasis, primaryBackground, secondaryBackground,
+} from "../styles/commonStyles";
 
-const LoginPage = ({navigation}) => {
+const LoginPage = ({ navigation }) => {
+  const handleLogin = () => {
+    navigation?.navigate("Logout");
+  };
+
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={[flexCenterBasis, appBackgroundColorPrimary]}>
       <Text>Login Screen</Text>
-      <Button title="Logout" onPress={() => navigation.navigate('Logout')} />
+      <Button color={primaryBackground} onPress={handleLogin} title="Button" />
+      <Button color={secondaryBackground} onPress={handleLogin} title="Button" />
     </View>
   );
 };
