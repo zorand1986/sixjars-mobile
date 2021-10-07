@@ -113,3 +113,20 @@ export const textColorSecondary = {
 export const smallBorderRadius = {
   borderRadius: 8,
 };
+
+export const basicText = {
+  ...textColorPrimary,
+  fontSize: 12
+};
+
+export const mediumText = {
+  ...textColorPrimary,
+  fontSize: 16
+};
+
+export const basicHeadline = {
+  ...textColorPrimary,
+  ...largeVerticalMargin,
+  fontSize: 24,
+  fontWeight: "bold"
+};

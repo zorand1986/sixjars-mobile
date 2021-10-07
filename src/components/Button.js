@@ -5,9 +5,9 @@ import {
 } from "../styles/commonStyles";
 
 const Button = ({
-  title, large, onPress, icon, color,
+  title, large, onPress, icon, color, style
 }) => (
-  <Pressable style={[smallVerticalPadding, largeHorizontalPadding, smallBorderRadius, { ...color }]} onPress={onPress}>
+<Pressable style={[smallVerticalPadding, largeHorizontalPadding, smallBorderRadius, { ...color }, style]} onPress={onPress}>
     <View>
       {icon ?? icon}
       <Text style={textColorPrimary}>{title}</Text>
