@@ -18,10 +18,14 @@ const LoginPage = ({ navigation }) => {
       <StatusBar barStyle={"light-content"} />
       <Text style={basicHeadline}>Login</Text>
       <BasicTextInput containerStyles={smallVerticalMargin} placeholder="Username" />
-      <BasicTextInput containerStyles={{marginBottom: 8}} placeholder="Password" />
+      <BasicTextInput secureTextEntry={true} containerStyles={{marginBottom: 16}} placeholder="Password" />
       <View style={{ flexDirection: "row"}}>
         <Button color={secondaryBackground} style={[smallVerticalMargin, smallHorizontalMargin]} onPress={handleLogin} title="Login" />
-        <Button color={primaryBackground} style={[smallVerticalMargin, smallHorizontalMargin]} onPress={handleLogin} title="Sign up" />
+        <Button 
+        color={primaryBackground} 
+        style={[smallVerticalMargin, smallHorizontalMargin]} 
+        onPress={handleLogin} title="Sign up"
+      />
       </View>
       <View style={[{ flexDirection: "row" }, largeVerticalMargin]}>
         <Divider/>

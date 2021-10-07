@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { View, TextInput } from "react-native";
+import { View, TextInput, Pressable, TouchableOpacity } from "react-native";
+
+import OpenedEye from "../../assets/OpenedEye";
+import ClosedEye from "../../assets/ClosedEye";
 
 import { colors, smallHorizontalPadding, textColorPrimary, textColorSecondary } from "../styles/commonStyles";
 
@@ -11,12 +14,13 @@ const BasicTextInput = ({
   onBlur,
   inputStyles,
   value,
-  autofocus
+  autofocus,
+  secureTextEntry
 }) => {
   const [focused, setFocused] = useState(false);
+  const [secured, setSecured] = useState(secureTextEntry);
   const styles = {
     container: {
-      width: "100%",
       height: 45,
       backgroundColor: colors.bgTertiary,
       borderRadius: 8,
@@ -27,8 +31,29 @@ const BasicTextInput = ({
 
   };
 
+  const secureIconStyle = {
+    position: "absolute",
+        top: 11, 
+        right: 10,
+        fill: colors.textColorPrimary 
+  };
+
   const handleFocus = () => {
     setFocused(true);
+  };
+
+  const handleBlur = () => {
+    setFocused(false);
+  };
+
+  const handleSecure = () => {
+    setSecured(!secured);
+  };
+
+  const renderSecureIcon = () => {
+    if(!secureTextEntry) return null;
+    if(secured) return <OpenedEye width={20} height={20} style={secureIconStyle}/>;
+    return <ClosedEye width={20} height={20} style={secureIconStyle} />;
   };
 
   return (
@@ -44,14 +69,18 @@ const BasicTextInput = ({
           { flex: 1 },
           textColorPrimary,
           inputStyles]}
-        onBlur={onBlur}
+        onBlur={handleBlur}
         onChangeText={onChangeText}
         value={value}
         onChange={onChange}
         onFocus={handleFocus}
         autofocus={autofocus}
         autoCorrect={false}
+        secureTextEntry={secured}
       />
+      <TouchableOpacity onPress={handleSecure}>
+        {renderSecureIcon()}
+        </TouchableOpacity>
     </View>
   );
 };
