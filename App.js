@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginPage from "./src/screens/LoginPage";
 import Signup from "./src/screens/Signup";
 import ForgotPassword from "./src/screens/ForgotPassword";
+import Setup from "./src/screens/Setup";
 
 import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
 
@@ -22,6 +23,14 @@ const headerOptions = {
 const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
+    <Stack.Screen
+      name="Setup" 
+      component={Setup}
+      options={{
+        title: "Currency",
+        ...headerOptions
+      }}
+      />
       <Stack.Screen
        name="Login" 
        component={LoginPage}
