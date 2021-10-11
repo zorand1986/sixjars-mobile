@@ -1,31 +1,42 @@
 import React from "react";
-import { Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginPage from "./src/screens/LoginPage";
-import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
 import Signup from "./src/screens/Signup";
+import ForgotPassword from "./src/screens/ForgotPassword";
 
-const LogoutPage = ({ navigation }) => (
-  <Button title="Go to Login" onPress={() => navigation.navigate("Login")} />
-);
+import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
+
 const Stack = createNativeStackNavigator();
 
+const headerOptions = {
+  headerStyle: {
+    ...appBackgroundColorPrimary
+  },
+  headerTintColor: colors.textColorPrimary,
+  headerTitleStyle: {
+    fontWeight: "bold",
+  },
+};
+
 const App = () => (
-  // <SafeAreaView style={backgroundStyle}>
-  //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
   <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen name="Signup" component={Signup} options={{headerShown: false}} />
       <Stack.Screen
        name="Login" 
        component={LoginPage}
       options={{headerShown: false}}
       />
-      <Stack.Screen name="Logout" component={LogoutPage} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{
+          title: "Forgot Password",
+          ...headerOptions
+        }} />
+      <Stack.Screen name="Signup" component={Signup} options={{
+          title: "Sign Up",
+          ...headerOptions
+        }}  />
     </Stack.Navigator>
   </NavigationContainer>
-  // </SafeAreaView>
 );
 
 export default App;

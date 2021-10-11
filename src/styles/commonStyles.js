@@ -20,12 +20,14 @@ export const margin = {
   small: 8,
   medium: 12,
   large: 16,
+  xl: 24
 };
 
 export const padding = {
   small: 8,
   medium: 12,
   large: 16,
+  xl: 24
 };
 
 export const flexCenterBasis = {
@@ -91,7 +93,23 @@ export const smallMarginBottom = {
 };
 
 export const largeMarginBottom = {
-  marginBottom: margin?.lagre
+  marginBottom: margin?.large
+};
+
+export const xlMarginBottom = {
+  marginBottom: margin?.xl
+};
+
+export const smallMarginTop = {
+  marginTop: margin?.small
+};
+
+export const largeMarginTop = {
+  marginTop: margin?.large
+};
+
+export const xlMarginTop = {
+  marginTop: margin?.xl
 };
 
 export const primaryBackground = {
@@ -165,4 +183,61 @@ export const labelText = {
 
 export const fullWidth = {
   width: "100%"
+};
+
+export const selfFlexEnd = {
+  alignSelf: "flex-end"
+};
+
+export const alignments = {
+  flex: {
+    flex: 1
+  },
+  row: {
+    flexDirection: "row"
+  },
+  column: {
+    flexDirection: "column"
+  },
+  alignCenter: {
+    alignItems: "center"
+  },
+  alignStart: {
+    alignItems: "flex-start"
+  },
+  alignEnd: {
+    alignItems: "flex-end"
+  },
+  justifyCenter: {
+    justifyContent: "cemter"
+  },
+  justifyStart: {
+    justifyContent: "flex-start"
+  },
+  justifyEnd: {
+    justifyContent: "flex-end"
+  },
+  justifyBetween: {
+    justifyContent: "space-between"
+  },
+  justifyAround: {
+    justifyContent: "space-around"
+  },
+  justifyEvenly: {
+    justifyContent: "space-evenly"
+  },
+  selfAlignCenter: {
+    alignSelf: "center"
+  },
+  selfAlignEnd: {
+    alignSelf: "flex-end"
+  },
+  selfAlignStart: {
+    alignSelf: "flex-start"
+  }
+};
+
+export const textInputContainer = {
+  ...smallMarginBottom,
+  ...fullWidth
 };

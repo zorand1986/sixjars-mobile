@@ -4,16 +4,31 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import { flexCenterBasis, appBackgroundColorPrimary, mediumHorizontalPadding, basicHeadline, primaryBackground, smallVerticalMargin, smallHorizontalMargin, errorText, labelText, smallMarginBottom, largeMarginBottom, fullWidth } from "../styles/commonStyles";
+import { 
+  appBackgroundColorPrimary, 
+  mediumHorizontalPadding, 
+  primaryBackground, 
+  smallVerticalMargin, 
+  smallHorizontalMargin, 
+  errorText, 
+  labelText, 
+  smallMarginBottom, 
+  largeMarginBottom, 
+  fullWidth, 
+  alignments, 
+  xlMarginTop,
+  textInputContainer
+} from "../styles/commonStyles";
+
 import BasicTextInput from "../components/BasicTextInput";
 import Button from "../components/Button";
 
-      const schema = yup.object({
-        name: yup.string().required("This field is required."),
-        username: yup.string().min(5, "Username must be atleast 5 character long.").required("This field is required."),
-        password: yup.string().min(5, "Password must be atleast 5 character long.").required("This field is required."),
-        confirm: yup.string().oneOf([yup.ref("password"), null], "Passwords must match").required("This field is required.")
-      });
+const schema = yup.object({
+  name: yup.string().required("This field is required."),
+  username: yup.string().min(5, "Username must be atleast 5 character long.").required("This field is required."),
+  password: yup.string().min(5, "Password must be atleast 5 character long.").required("This field is required."),
+  confirm: yup.string().oneOf([yup.ref("password"), null], "Passwords must match").required("This field is required.")
+});
 
 
 const Signup = () => {
@@ -26,10 +41,10 @@ const Signup = () => {
     const onSubmit = data => console.log(data);
     
     return (
-        <View style={[flexCenterBasis, appBackgroundColorPrimary, mediumHorizontalPadding]}>
+        <View style={[alignments.flex, appBackgroundColorPrimary, mediumHorizontalPadding]}>
         <StatusBar barStyle={"light-content"} />
-        <Text style={basicHeadline}>Signup</Text>
-        <View style={[smallMarginBottom, fullWidth]}>
+        {/* <Text style={basicHeadline}>Signup</Text> */}
+        <View style={[textInputContainer, xlMarginTop]}>
           <Controller
               control={control}
               render={({ field: { onChange, onBlur, value } }) => (
@@ -48,7 +63,7 @@ const Signup = () => {
           />
           {errors.name && <Text style={errorText}>{errors?.name?.message}</Text>}
         </View>
-        <View style={[smallMarginBottom, fullWidth]}>
+        <View style={textInputContainer}>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -68,7 +83,7 @@ const Signup = () => {
           />
           {errors.username && <Text style={errorText}>{errors?.username?.message}</Text>}
         </View>   
-        <View style={[smallMarginBottom, fullWidth]}>
+        <View style={textInputContainer}>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -108,7 +123,7 @@ const Signup = () => {
           />
           {errors.confirm && <Text style={errorText}>{errors?.confirm?.message}</Text>}
         </View>
-        <View style={{ flexDirection: "row"}}>
+        <View style={[alignments.row, alignments.justifyEnd]}>
             <Button 
             color={primaryBackground} 
             style={[smallVerticalMargin, smallHorizontalMargin]} 
