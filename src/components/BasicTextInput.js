@@ -15,7 +15,8 @@ const BasicTextInput = ({
   inputStyles,
   value,
   autofocus,
-  secureTextEntry
+  secureTextEntry,
+  error
 }) => {
   const [focused, setFocused] = useState(false);
   const [secured, setSecured] = useState(secureTextEntry);
@@ -60,7 +61,9 @@ const BasicTextInput = ({
     <View
       style={[styles?.container,
         containerStyles,
-        focused ? { borderColor: colors.textColorSecondary } : { borderColor: colors.black }]}
+        focused ? { borderColor: colors.textColorSecondary } : { borderColor: colors.black },
+        error && { borderColor: colors.error },
+      ]}
     >
       <TextInput
         placeholder={placeholder}

@@ -86,6 +86,14 @@ export const largeHorizontalPadding = {
   paddingHorizontal: padding?.large,
 };
 
+export const smallMarginBottom = {
+  marginBottom: margin?.small
+};
+
+export const largeMarginBottom = {
+  marginBottom: margin?.lagre
+};
+
 export const primaryBackground = {
   backgroundColor: colors?.primary,
 };
@@ -110,8 +118,16 @@ export const textColorSecondary = {
   color: colors?.textColorSecondary,
 };
 
+export const textColorError = {
+  color: colors?.error
+};
+
 export const smallBorderRadius = {
   borderRadius: 8,
+};
+
+export const smallText = {
+  fontSize: 10
 };
 
 export const basicText = {
@@ -129,4 +145,24 @@ export const basicHeadline = {
   ...largeVerticalMargin,
   fontSize: 24,
   fontWeight: "bold"
+};
+
+export const errorText = {
+  ...smallText,
+  ...textColorError,
+  alignSelf: "flex-start"
+};
+
+export const labelText = {
+  ...smallText,
+  ...textColorSecondary,
+  alignSelf: "flex-start",
+  textTransform: "uppercase",
+  fontWeight: "bold",
+  marginBottom: 2,
+  marginTop: 4
+};
+
+export const fullWidth = {
+  width: "100%"
 };

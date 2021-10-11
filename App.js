@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginPage from "./src/screens/LoginPage";
 import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
+import Signup from "./src/screens/Signup";
 
 const LogoutPage = ({ navigation }) => (
   <Button title="Go to Login" onPress={() => navigation.navigate("Login")} />
@@ -15,6 +16,7 @@ const App = () => (
   //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
   <NavigationContainer>
     <Stack.Navigator>
+      <Stack.Screen name="Signup" component={Signup} options={{headerShown: false}} />
       <Stack.Screen
        name="Login" 
        component={LoginPage}
