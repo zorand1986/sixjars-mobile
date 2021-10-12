@@ -1,7 +1,24 @@
 import React from "react";
 import { View, StatusBar, Text, ScrollView } from "react-native";
 import Divider from "../components/Divider";
-import { appBackgroundColorSecondary, borderRadius, smallBorderRadius, alignments, mediumHorizontalPadding, appBackgroundColorPrimary, labelText, smallVerticalPadding, smallHorizontalPadding, fullWidth, basicText, smallVerticalMargin, basicTextBold, secondaryText, smallMarginTop, mediumVerticalPadding, mediumPadding, smallMarginBottom } from "../styles/commonStyles";
+import ArrowRight from "../../assets/ArrowRight";
+import { 
+    appBackgroundColorSecondary,
+    smallBorderRadius,
+    alignments,
+    mediumHorizontalPadding,
+    appBackgroundColorPrimary,
+    labelText,
+    fullWidth,
+    basicText,
+    smallVerticalMargin,
+    basicTextBold,
+    secondaryText,
+    smallMarginTop,
+    mediumPadding,
+    smallMarginBottom,
+    colors
+ } from "../styles/commonStyles";
 
 const mockData = [
     {id: "1", date: "12/10/2021", amount: "345", note: "groceries", jar: "neccessity"},
@@ -17,8 +34,9 @@ const Home = () => {
         <View style={[ alignments.flex, appBackgroundColorPrimary, mediumHorizontalPadding]}>
             <StatusBar barStyle={"light-content"} />
             <View style={[appBackgroundColorSecondary, smallBorderRadius, { height: 250 }, mediumPadding, smallMarginBottom]}>
-                <View>
+                <View style={[alignments.row, alignments.justifyBetween]}>
                     <Text style={labelText}>Last transactions</Text>
+                    <ArrowRight width={25} height={25} fill={colors.secondary} />
                 </View>
                 <ScrollView style={smallMarginTop}>
                     {mockData.map((item, index) => (
