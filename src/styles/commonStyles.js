@@ -88,6 +88,30 @@ export const largeHorizontalPadding = {
   paddingHorizontal: padding?.large,
 };
 
+export const smallPadding = {
+  padding: padding?.small
+};
+
+export const mediumPadding = {
+  padding: padding?.medium
+};
+
+export const largePadding = {
+  padding: padding?.large
+};
+
+export const smallMargin = {
+  margin: margin?.small
+};
+
+export const mediumMargin = {
+  margin: margin?.medium
+};
+
+export const largeMargin = {
+  margin: margin?.large
+};
+
 export const smallMarginBottom = {
   marginBottom: margin?.small
 };
@@ -153,6 +177,16 @@ export const basicText = {
   fontSize: 12
 };
 
+export const basicTextBold = {
+  ...basicText,
+  fontWeight: "bold"
+};
+
+export const secondaryText = {
+  ...textColorSecondary,
+  fontSize: 12
+};
+
 export const mediumText = {
   ...textColorPrimary,
   fontSize: 16
@@ -173,7 +207,7 @@ export const errorText = {
 
 export const labelText = {
   ...smallText,
-  ...textColorSecondary,
+  color: "#fff",
   alignSelf: "flex-start",
   textTransform: "uppercase",
   fontWeight: "bold",
@@ -209,7 +243,7 @@ export const alignments = {
     alignItems: "flex-end"
   },
   justifyCenter: {
-    justifyContent: "cemter"
+    justifyContent: "center"
   },
   justifyStart: {
     justifyContent: "flex-start"

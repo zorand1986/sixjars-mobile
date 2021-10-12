@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, StatusBar } from "react-native";
+import { View, Text, FlatList, StatusBar, TouchableOpacity } from "react-native";
 import { countries } from "countries-list";
 
 import Button from "../components/Button";
@@ -14,12 +14,10 @@ import {
     primaryBackground,
     smallHorizontalMargin,
     labelText,
-    xlMarginBottom,
     colors
  } from "../styles/commonStyles";
-import Divider from "../components/Divider";
 
-const Setup = () => {
+const Setup = ({ navigation }) => {
 
     const formatLong = (string) => {
         if (string.length < 30) {
@@ -37,26 +35,30 @@ const Setup = () => {
         return curr;
     };
 
+    const handleSelect = () => {
+        navigation?.navigate("Home");
+    };
+
     const parseCountries = Object.keys(countries);
 
     const renderItem = item => {
 
         return (
-            <View key={`${countries[item?.item]?.name}-${countries[item?.item]?.phone}`} style={[alignments.row, alignments.justifyBetween, alignments.alignCenter, {height: 51}]}>
+            <TouchableOpacity onPress={handleSelect} key={`${countries[item?.item]?.name}-${countries[item?.item]?.phone}`} style={[alignments.row, alignments.justifyBetween, alignments.alignCenter, {height: 51}]}>
                 <View style={alignments.row}>
                     <Text style={{ width: 40 }}>{countries[item?.item]?.emoji}</Text>
                     <Text style={[basicText, {width: 40}]}>{item?.item}</Text>
                     <Text style={basicText}>{formatLong(countries[item?.item]?.name)}</Text>
                 </View>
                 <Text style={[basicText, alignments.alignCenter]}>{formatCurrency(countries[item?.item]?.currency || "USD")}</Text>
-            </View>
+            </TouchableOpacity>
         );
     };
 
     return (
         <View style={[ alignments.flex, appBackgroundColorPrimary, mediumHorizontalPadding]}>
-        <StatusBar barStyle={"light-content"} />
-        <Text style={[labelText, xlMarginTop]}>Select currency</Text>
+            <StatusBar barStyle={"light-content"} />
+            <Text style={[labelText, xlMarginTop]}>Select currency</Text>
             <View style={[smallVerticalMargin, fullWidth, { marginBottom: 60 }]}>
             <FlatList
                 data={parseCountries}

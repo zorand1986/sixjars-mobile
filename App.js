@@ -7,6 +7,7 @@ import ForgotPassword from "./src/screens/ForgotPassword";
 import Setup from "./src/screens/Setup";
 
 import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
+import Home from "./src/screens/Home";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,14 @@ const App = () => (
       component={Setup}
       options={{
         title: "Currency",
+        ...headerOptions
+      }}
+      />
+      <Stack.Screen
+      name="Home" 
+      component={Home}
+      options={{
+        title: "Home",
         ...headerOptions
       }}
       />
