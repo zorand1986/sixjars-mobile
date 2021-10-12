@@ -1,5 +1,7 @@
-import React from "react";
-import { View, StatusBar, Text, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { View, StatusBar, Text, ScrollView, Dimensions
+ } from "react-native";
+import { LineChart } from "react-native-chart-kit";
 import Divider from "../components/Divider";
 import ArrowRight from "../../assets/ArrowRight";
 import { 
@@ -29,11 +31,14 @@ const mockData = [
     {id: "6", date: "12/10/2021", amount: "675", note: "madjarski", jar: "growth"}
 ];
 
+const bottomLabels = Array.from({length: 31}).map((item, index) => index +1 );
+
 const Home = () => {
+    const [chartParentWidth, setChartParentWidth] = useState(0);
     return (
         <View style={[ alignments.flex, appBackgroundColorPrimary, mediumHorizontalPadding]}>
             <StatusBar barStyle={"light-content"} />
-            <View style={[appBackgroundColorSecondary, smallBorderRadius, { height: 250 }, mediumPadding, smallMarginBottom]}>
+            <View onLayout={({ nativeEvent }) => setChartParentWidth(nativeEvent.layout.width)} style={[appBackgroundColorSecondary, smallBorderRadius, { height: 250 }, mediumPadding, smallMarginBottom]}>
                 <View style={[alignments.row, alignments.justifyBetween]}>
                     <Text style={labelText}>Last transactions</Text>
                     <ArrowRight width={25} height={25} fill={colors.secondary} />
@@ -58,10 +63,58 @@ const Home = () => {
                          </ View>
                     ))}
                 </ScrollView>
-
             </View>
-            
-        </View>
+            <LineChart
+                        data={{
+                        labels: bottomLabels,
+                        datasets: [
+                            {
+                            data: [
+                                Math.random() * 100,
+                                Math.random() * 100,
+                                Math.random() * 100,
+                                Math.random() * 100,
+                                Math.random() * 100,
+                                Math.random() * 100
+                            ]
+                            }
+                        ]
+                        }}
+                        width={chartParentWidth} // from react-native
+                        height={250}
+                        yAxisLabel="$"
+                        yAxisSuffix="k"
+                        yAxisInterval={2} // optional, defaults to 1
+                        chartConfig={{
+                        backgroundColor: "#e26a00",
+                        backgroundGradientFrom: "#fb8c00",
+                        backgroundGradientTo: "#ffa726",
+                        decimalPlaces: 0, // optional, defaults to 2dp
+                        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                        labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                        propsForDots: {
+                            r: "3",
+                            strokeWidth: "2",
+                            stroke: "#ffa726"
+                        },
+                        propsForHorizontalLabels: {
+                            fontSize: 8,
+                        },
+                        propsForVerticalLabels: {
+                            fontSize: 6
+                        }
+                        }}
+                        bezier
+                        style={{
+                        borderRadius: 8,
+                        marginHorizontal: 0,
+                        // marginRight: 20,
+                        paddingRight: 40,
+                        paddingTop: 24,
+                        paddingBottom: 24
+                        }}
+                    />
+            </View>
     );
 };
 

@@ -24,19 +24,19 @@ const headerOptions = {
 const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
-    <Stack.Screen
-      name="Setup" 
-      component={Setup}
-      options={{
-        title: "Currency",
-        ...headerOptions
-      }}
-      />
       <Stack.Screen
       name="Home" 
       component={Home}
       options={{
         title: "Home",
+        ...headerOptions
+      }}
+      />
+    <Stack.Screen
+      name="Setup" 
+      component={Setup}
+      options={{
+        title: "Currency",
         ...headerOptions
       }}
       />
