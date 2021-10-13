@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { View, StatusBar, Text, ScrollView, Dimensions
+import { View, StatusBar, Text, ScrollView, TouchableOpacity
  } from "react-native";
 import { LineChart } from "react-native-chart-kit";
 import Divider from "../components/Divider";
 import ArrowRight from "../../assets/ArrowRight";
+import Add from "../../assets/Add";
 import { 
     appBackgroundColorSecondary,
     smallBorderRadius,
@@ -64,19 +65,17 @@ const Home = () => {
                     ))}
                 </ScrollView>
             </View>
+            <View>
+                <Text style={labelText}>Daily trend</Text>
             <LineChart
                         data={{
                         labels: bottomLabels,
                         datasets: [
                             {
-                            data: [
-                                Math.random() * 100,
-                                Math.random() * 100,
-                                Math.random() * 100,
-                                Math.random() * 100,
-                                Math.random() * 100,
-                                Math.random() * 100
-                            ]
+                            data: Array.from({length: 31}).map(() => Math.random() * 100)
+                            },
+                            {
+                            data: Array.from({ length: 31 }).map(() => 50)
                             }
                         ]
                         }}
@@ -108,12 +107,17 @@ const Home = () => {
                         style={{
                         borderRadius: 8,
                         marginHorizontal: 0,
+                        marginTop: 0,
                         // marginRight: 20,
                         paddingRight: 40,
-                        paddingTop: 24,
+                        // paddingTop: 24,
                         paddingBottom: 24
                         }}
                     />
+                    </View>
+                    <TouchableOpacity style={{ position: "absolute", right: 30, bottom: 80, backgroundColor: colors.secondary, borderRadius: 24, width: 50, height: 50, alignItems: "center", justifyContent: "center"}}>
+                        <Add width={20} height={20} fill="#fff" />
+                    </TouchableOpacity>
             </View>
     );
 };
