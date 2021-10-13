@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { View, StatusBar, Text, ScrollView, TouchableOpacity
  } from "react-native";
-import { LineChart } from "react-native-chart-kit";
 import Divider from "../components/Divider";
-import ArrowRight from "../../assets/ArrowRight";
 import Add from "../../assets/Add";
 import Food from "../../assets/Food";
 import PiggyBank from "../../assets/PiggyBank";
@@ -13,33 +11,19 @@ import Growth from "../../assets/Growth";
 import Heart from "../../assets/Heart";
 import JarListItem from "../components/JarListItem";
 import { 
-    appBackgroundColorSecondary,
-    smallBorderRadius,
     alignments,
     mediumHorizontalPadding,
     appBackgroundColorPrimary,
-    labelText,
     fullWidth,
     basicText,
     smallVerticalMargin,
     basicTextBold,
     secondaryText,
     smallMarginTop,
-    mediumPadding,
-    smallMarginBottom,
     colors,
-    flexCenterBasis
  } from "../styles/commonStyles";
 import SectionWrapper from "../components/SectionWrapper";
-
-const mockData = [
-    {id: "1", date: "12/10/2021", amount: "345", note: "groceries", jar: "neccessity"},
-    {id: "2", date: "12/10/2021", amount: "123", note: "dining", jar: "entertainment"},
-    {id: "3", date: "12/10/2021", amount: "675", note: "madjarski", jar: "growth"},
-    {id: "4", date: "12/10/2021", amount: "345", note: "groceries", jar: "neccessity"},
-    {id: "5", date: "12/10/2021", amount: "123", note: "dining", jar: "entertainment"},
-    {id: "6", date: "12/10/2021", amount: "675", note: "madjarski", jar: "growth"}
-];
+import BasicChart from "../components/BasicChart";
 
 const mockJars = [
     {id: 1, code: "ESS", Icon: Food, progress: 0.5, percentage: "50%"},
@@ -50,7 +34,15 @@ const mockJars = [
     {id: 6, code: "SHR", Icon: Heart, progress: 1, percentage: "100%"},
 ];
 
-const bottomLabels = Array.from({length: 31}).map((item, index) => index +1 );
+const mockData = [
+    {id: "1", date: "12/10/2021", amount: "345", note: "groceries", jar: "neccessity"},
+    {id: "2", date: "12/10/2021", amount: "123", note: "dining", jar: "entertainment"},
+    {id: "3", date: "12/10/2021", amount: "675", note: "madjarski", jar: "growth"},
+    {id: "4", date: "12/10/2021", amount: "345", note: "groceries", jar: "neccessity"},
+    {id: "5", date: "12/10/2021", amount: "123", note: "dining", jar: "entertainment"},
+    {id: "6", date: "12/10/2021", amount: "675", note: "madjarski", jar: "growth"}
+];
+
 
 const Home = () => {
     const [chartParentWidth, setChartParentWidth] = useState(0);
@@ -81,53 +73,7 @@ const Home = () => {
                         ))}
                     </ScrollView>
                 </SectionWrapper>
-                <View>
-                <LineChart
-                    data={{
-                    labels: bottomLabels,
-                    datasets: [
-                        {
-                        data: Array.from({length: 31}).map(() => Math.random() * 100)
-                        },
-                        {
-                        data: Array.from({ length: 31 }).map(() => 50)
-                        }
-                    ]
-                    }}
-                    width={chartParentWidth} // from react-native
-                    height={250}
-                    yAxisLabel="$"
-                    yAxisSuffix="k"
-                    yAxisInterval={2} // optional, defaults to 1
-                    chartConfig={{
-                    backgroundColor: "#e26a00",
-                    backgroundGradientFrom: "#fb8c00",
-                    backgroundGradientTo: "#ffa726",
-                    decimalPlaces: 0, // optional, defaults to 2dp
-                    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                    labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                    propsForDots: {
-                        r: "3",
-                        strokeWidth: "2",
-                        stroke: "#ffa726"
-                    },
-                    propsForHorizontalLabels: {
-                        fontSize: 8,
-                    },
-                    propsForVerticalLabels: {
-                        fontSize: 6
-                    }
-                    }}
-                    bezier
-                    style={{
-                    borderRadius: 8,
-                    marginHorizontal: 0,
-                    marginTop: 16,
-                    paddingRight: 40,
-                    paddingBottom: 12
-                    }}
-                />
-                </View>
+                <BasicChart chartParentWidth={chartParentWidth} />
                 <SectionWrapper title="jars" style={{ marginBottom: 130 }}>
                     <View>
                         {mockJars.map(item => {
