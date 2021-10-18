@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React from "react";
 import {
   View, Text, StatusBar, Pressable,
@@ -22,7 +21,7 @@ import {
   largeMarginBottom,
 } from "../styles/commonStyles";
 import Facebook from "../../assets/Facebook.svg";
-import Google from "../../assets/Google";
+import Google from "../../assets/Google.svg";
 import Divider from "../components/Divider";
 
 const LoginPage = ({ navigation }) => {

@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-filename-extension */
-import React from "react";
+import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginPage from "./src/screens/LoginPage";
