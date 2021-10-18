@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { LineChart } from "react-native-chart-kit";
+import { colors } from "../styles/commonStyles";
 
 const bottomLabels = Array.from({ length: 31 }).map((item, index) => index + 1);
 
@@ -24,14 +25,14 @@ const BasicChart = ({ chartParentWidth }) => (
       yAxisSuffix="k"
       yAxisInterval={2} // optional, defaults to 1
       chartConfig={{
-        backgroundColor: "#e26a00",
-        backgroundGradientFrom: "#fb8c00",
-        backgroundGradientTo: "#ffa726",
+        backgroundColor: colors.primary,
+        backgroundGradientFrom: colors.bgSecondary,
+        backgroundGradientTo: colors.bgSecondary,
         decimalPlaces: 0, // optional, defaults to 2dp
         color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
         labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
         propsForDots: {
-          r: "3",
+          r: "2",
           strokeWidth: "2",
           stroke: "#ffa726",
         },
