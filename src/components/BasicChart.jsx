@@ -1,9 +1,26 @@
 import React from "react";
 import { View } from "react-native";
 import { LineChart } from "react-native-chart-kit";
+import Svg, { Text } from "react-native-svg";
 import { colors } from "../styles/commonStyles";
 
 const bottomLabels = Array.from({ length: 31 }).map((item, index) => index + 1);
+
+const chartDecorator = () => (
+  <View>
+    <Svg>
+      <Text
+        x={300}
+        y={130}
+        fill={colors.tertiary}
+        fontSize="12"
+        textAnchor="start"
+      >
+        avg. 330
+      </Text>
+    </Svg>
+  </View>
+);
 
 const BasicChart = ({ chartParentWidth }) => (
   <View>
@@ -16,14 +33,19 @@ const BasicChart = ({ chartParentWidth }) => (
           },
           {
             data: Array.from({ length: 31 }).map(() => 50),
+            color: () => "white", // optional
+            strokeWidth: 1, // optional
+            withDots: false,
+            withInnerLines: true,
           },
         ],
       }}
+      decorator={chartDecorator}
       width={chartParentWidth} // from react-native
       height={250}
       yAxisLabel="$"
       yAxisSuffix="k"
-      yAxisInterval={2} // optional, defaults to 1
+      yAxisInterval={3} // optional, defaults to 1
       chartConfig={{
         backgroundColor: colors.primary,
         backgroundGradientFrom: colors.bgSecondary,
