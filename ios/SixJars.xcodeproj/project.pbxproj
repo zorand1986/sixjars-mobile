@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SixJarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SixJarsTests.m */; };
+		0BCF7E8E7F304530D3C53D68 /* libPods-SixJars-SixJarsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B491EC57E3A5D934E60542D /* libPods-SixJars-SixJarsTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		173EBE06CA317C6037F2D1EA /* libPods-SixJars.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 676717579AF0FE8AE1250443 /* libPods-SixJars.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		AC9AD00CFF773CBCC2A0653B /* libPods-SixJars.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D51E94F0C181184FE1B0A1 /* libPods-SixJars.a */; };
-		D20457954BDB712D787B293B /* libPods-SixJars-SixJarsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C16D61A0B97AD1A0A8F64712 /* libPods-SixJars-SixJarsTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,20 +30,20 @@
 		00E356EE1AD99517003FC87E /* SixJarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixJarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SixJarsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixJarsTests.m; sourceTree = "<group>"; };
-		02153F522EB27621AFDED8D1 /* Pods-SixJars-SixJarsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixJars-SixJarsTests.debug.xcconfig"; path = "Target Support Files/Pods-SixJars-SixJarsTests/Pods-SixJars-SixJarsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SixJars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixJars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SixJars/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SixJars/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SixJars/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SixJars/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SixJars/main.m; sourceTree = "<group>"; };
-		2DEE3C8E884353BA4F209B7D /* Pods-SixJars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixJars.release.xcconfig"; path = "Target Support Files/Pods-SixJars/Pods-SixJars.release.xcconfig"; sourceTree = "<group>"; };
-		32E8BBC792C84B303B0D1A14 /* Pods-SixJars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixJars.debug.xcconfig"; path = "Target Support Files/Pods-SixJars/Pods-SixJars.debug.xcconfig"; sourceTree = "<group>"; };
+		1FA97B827B347C53EBB0E578 /* Pods-SixJars-SixJarsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixJars-SixJarsTests.release.xcconfig"; path = "Target Support Files/Pods-SixJars-SixJarsTests/Pods-SixJars-SixJarsTests.release.xcconfig"; sourceTree = "<group>"; };
+		34EF8746FCE60A0940C09310 /* Pods-SixJars-SixJarsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixJars-SixJarsTests.debug.xcconfig"; path = "Target Support Files/Pods-SixJars-SixJarsTests/Pods-SixJars-SixJarsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		676717579AF0FE8AE1250443 /* libPods-SixJars.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SixJars.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C1154AA733C20D871F9AEC /* Pods-SixJars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixJars.release.xcconfig"; path = "Target Support Files/Pods-SixJars/Pods-SixJars.release.xcconfig"; sourceTree = "<group>"; };
+		6B491EC57E3A5D934E60542D /* libPods-SixJars-SixJarsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SixJars-SixJarsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SixJars/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A8D51E94F0C181184FE1B0A1 /* libPods-SixJars.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SixJars.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C16D61A0B97AD1A0A8F64712 /* libPods-SixJars-SixJarsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SixJars-SixJarsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA088B7F4F6D5D3BDF380D13 /* Pods-SixJars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixJars.debug.xcconfig"; path = "Target Support Files/Pods-SixJars/Pods-SixJars.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F67C540BEB06F0F57D4A0B91 /* Pods-SixJars-SixJarsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixJars-SixJarsTests.release.xcconfig"; path = "Target Support Files/Pods-SixJars-SixJarsTests/Pods-SixJars-SixJarsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D20457954BDB712D787B293B /* libPods-SixJars-SixJarsTests.a in Frameworks */,
+				0BCF7E8E7F304530D3C53D68 /* libPods-SixJars-SixJarsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC9AD00CFF773CBCC2A0653B /* libPods-SixJars.a in Frameworks */,
+				173EBE06CA317C6037F2D1EA /* libPods-SixJars.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				A8D51E94F0C181184FE1B0A1 /* libPods-SixJars.a */,
-				C16D61A0B97AD1A0A8F64712 /* libPods-SixJars-SixJarsTests.a */,
+				676717579AF0FE8AE1250443 /* libPods-SixJars.a */,
+				6B491EC57E3A5D934E60542D /* libPods-SixJars-SixJarsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,7 +121,7 @@
 				00E356EF1AD99517003FC87E /* SixJarsTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				B0839C7A093A42C659E5D60C /* Pods */,
+				FBF002A62869A4AF8D2470A2 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,13 +137,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B0839C7A093A42C659E5D60C /* Pods */ = {
+		FBF002A62869A4AF8D2470A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				32E8BBC792C84B303B0D1A14 /* Pods-SixJars.debug.xcconfig */,
-				2DEE3C8E884353BA4F209B7D /* Pods-SixJars.release.xcconfig */,
-				02153F522EB27621AFDED8D1 /* Pods-SixJars-SixJarsTests.debug.xcconfig */,
-				F67C540BEB06F0F57D4A0B91 /* Pods-SixJars-SixJarsTests.release.xcconfig */,
+				BA088B7F4F6D5D3BDF380D13 /* Pods-SixJars.debug.xcconfig */,
+				68C1154AA733C20D871F9AEC /* Pods-SixJars.release.xcconfig */,
+				34EF8746FCE60A0940C09310 /* Pods-SixJars-SixJarsTests.debug.xcconfig */,
+				1FA97B827B347C53EBB0E578 /* Pods-SixJars-SixJarsTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -156,11 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SixJarsTests" */;
 			buildPhases = (
-				E307635980044534521CE9D1 /* [CP] Check Pods Manifest.lock */,
+				7B04A2BEDA479D775592ED3A /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				287321F2AF2FFBB6A0F37E53 /* [CP] Copy Pods Resources */,
+				6BB85E48A1802722A57E4FC4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,13 +176,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SixJars" */;
 			buildPhases = (
-				CF72BD05B11EC85182F2EBD7 /* [CP] Check Pods Manifest.lock */,
+				C3D8678C48AF65E20D5D9E8E /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				9803E9A1BCB996CD4FC03261 /* [CP] Copy Pods Resources */,
+				7B644CB2E7128B3B61B2C77A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,7 +263,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		287321F2AF2FFBB6A0F37E53 /* [CP] Copy Pods Resources */ = {
+		6BB85E48A1802722A57E4FC4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,7 +280,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SixJars-SixJarsTests/Pods-SixJars-SixJarsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9803E9A1BCB996CD4FC03261 /* [CP] Copy Pods Resources */ = {
+		7B04A2BEDA479D775592ED3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SixJars-SixJarsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B644CB2E7128B3B61B2C77A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -297,7 +319,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SixJars/Pods-SixJars-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF72BD05B11EC85182F2EBD7 /* [CP] Check Pods Manifest.lock */ = {
+		C3D8678C48AF65E20D5D9E8E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,28 +335,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SixJars-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E307635980044534521CE9D1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SixJars-SixJarsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -393,7 +393,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02153F522EB27621AFDED8D1 /* Pods-SixJars-SixJarsTests.debug.xcconfig */;
+			baseConfigurationReference = 34EF8746FCE60A0940C09310 /* Pods-SixJars-SixJarsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -420,7 +420,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F67C540BEB06F0F57D4A0B91 /* Pods-SixJars-SixJarsTests.release.xcconfig */;
+			baseConfigurationReference = 1FA97B827B347C53EBB0E578 /* Pods-SixJars-SixJarsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -444,7 +444,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32E8BBC792C84B303B0D1A14 /* Pods-SixJars.debug.xcconfig */;
+			baseConfigurationReference = BA088B7F4F6D5D3BDF380D13 /* Pods-SixJars.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -470,7 +470,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DEE3C8E884353BA4F209B7D /* Pods-SixJars.release.xcconfig */;
+			baseConfigurationReference = 68C1154AA733C20D871F9AEC /* Pods-SixJars.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

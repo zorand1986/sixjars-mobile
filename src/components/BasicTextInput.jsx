@@ -1,22 +1,26 @@
+/* eslint-disable import/no-unresolved */
 import React, { useState } from "react";
-import { View, TextInput, Pressable, TouchableOpacity } from "react-native";
+import {
+  View, TextInput, TouchableOpacity,
+} from "react-native";
 
 import OpenedEye from "../../assets/OpenedEye";
 import ClosedEye from "../../assets/ClosedEye";
 
-import { colors, smallHorizontalPadding, textColorPrimary, textColorSecondary } from "../styles/commonStyles";
+import {
+  colors, smallHorizontalPadding, textColorPrimary, textColorSecondary,
+} from "../styles/commonStyles";
 
 const BasicTextInput = ({
   onChange,
   onChangeText,
   containerStyles,
   placeholder,
-  onBlur,
   inputStyles,
   value,
   autofocus,
   secureTextEntry,
-  error
+  error,
 }) => {
   const [focused, setFocused] = useState(false);
   const [secured, setSecured] = useState(secureTextEntry);
@@ -34,9 +38,9 @@ const BasicTextInput = ({
 
   const secureIconStyle = {
     position: "absolute",
-        top: 11, 
-        right: 10,
-        fill: colors.textColorPrimary 
+    top: 11,
+    right: 10,
+    fill: colors.textColorPrimary,
   };
 
   const handleFocus = () => {
@@ -52,8 +56,12 @@ const BasicTextInput = ({
   };
 
   const renderSecureIcon = () => {
-    if(!secureTextEntry) return null;
-    if(secured) return <OpenedEye width={20} height={20} style={secureIconStyle}/>;
+    if (!secureTextEntry) return null;
+    if (secured) {
+      return (
+        <OpenedEye width={20} height={20} style={secureIconStyle} />
+      );
+    }
     return <ClosedEye width={20} height={20} style={secureIconStyle} />;
   };
 
@@ -61,7 +69,9 @@ const BasicTextInput = ({
     <View
       style={[styles?.container,
         containerStyles,
-        focused ? { borderColor: colors.textColorSecondary } : { borderColor: colors.black },
+        focused
+          ? { borderColor: colors.textColorSecondary }
+          : { borderColor: colors.black },
         error && { borderColor: colors.error },
       ]}
     >
@@ -83,7 +93,7 @@ const BasicTextInput = ({
       />
       <TouchableOpacity onPress={handleSecure}>
         {renderSecureIcon()}
-        </TouchableOpacity>
+      </TouchableOpacity>
     </View>
   );
 };

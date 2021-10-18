@@ -20,14 +20,14 @@ export const margin = {
   small: 8,
   medium: 12,
   large: 16,
-  xl: 24
+  xl: 24,
 };
 
 export const padding = {
   small: 8,
   medium: 12,
   large: 16,
-  xl: 24
+  xl: 24,
 };
 
 export const flexCenterBasis = {
@@ -89,51 +89,51 @@ export const largeHorizontalPadding = {
 };
 
 export const smallPadding = {
-  padding: padding?.small
+  padding: padding?.small,
 };
 
 export const mediumPadding = {
-  padding: padding?.medium
+  padding: padding?.medium,
 };
 
 export const largePadding = {
-  padding: padding?.large
+  padding: padding?.large,
 };
 
 export const smallMargin = {
-  margin: margin?.small
+  margin: margin?.small,
 };
 
 export const mediumMargin = {
-  margin: margin?.medium
+  margin: margin?.medium,
 };
 
 export const largeMargin = {
-  margin: margin?.large
+  margin: margin?.large,
 };
 
 export const smallMarginBottom = {
-  marginBottom: margin?.small
+  marginBottom: margin?.small,
 };
 
 export const largeMarginBottom = {
-  marginBottom: margin?.large
+  marginBottom: margin?.large,
 };
 
 export const xlMarginBottom = {
-  marginBottom: margin?.xl
+  marginBottom: margin?.xl,
 };
 
 export const smallMarginTop = {
-  marginTop: margin?.small
+  marginTop: margin?.small,
 };
 
 export const largeMarginTop = {
-  marginTop: margin?.large
+  marginTop: margin?.large,
 };
 
 export const xlMarginTop = {
-  marginTop: margin?.xl
+  marginTop: margin?.xl,
 };
 
 export const primaryBackground = {
@@ -161,7 +161,7 @@ export const textColorSecondary = {
 };
 
 export const textColorError = {
-  color: colors?.error
+  color: colors?.error,
 };
 
 export const smallBorderRadius = {
@@ -169,40 +169,40 @@ export const smallBorderRadius = {
 };
 
 export const smallText = {
-  fontSize: 10
+  fontSize: 10,
 };
 
 export const basicText = {
   ...textColorPrimary,
-  fontSize: 12
+  fontSize: 12,
 };
 
 export const basicTextBold = {
   ...basicText,
-  fontWeight: "bold"
+  fontWeight: "bold",
 };
 
 export const secondaryText = {
   ...textColorSecondary,
-  fontSize: 12
+  fontSize: 12,
 };
 
 export const mediumText = {
   ...textColorPrimary,
-  fontSize: 16
+  fontSize: 16,
 };
 
 export const basicHeadline = {
   ...textColorPrimary,
   ...largeVerticalMargin,
   fontSize: 24,
-  fontWeight: "bold"
+  fontWeight: "bold",
 };
 
 export const errorText = {
   ...smallText,
   ...textColorError,
-  alignSelf: "flex-start"
+  alignSelf: "flex-start",
 };
 
 export const labelText = {
@@ -212,66 +212,66 @@ export const labelText = {
   textTransform: "uppercase",
   fontWeight: "bold",
   marginBottom: 2,
-  marginTop: 4
+  marginTop: 4,
 };
 
 export const fullWidth = {
-  width: "100%"
+  width: "100%",
 };
 
 export const selfFlexEnd = {
-  alignSelf: "flex-end"
+  alignSelf: "flex-end",
 };
 
 export const alignments = {
   flex: {
-    flex: 1
+    flex: 1,
   },
   row: {
-    flexDirection: "row"
+    flexDirection: "row",
   },
   column: {
-    flexDirection: "column"
+    flexDirection: "column",
   },
   alignCenter: {
-    alignItems: "center"
+    alignItems: "center",
   },
   alignStart: {
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   alignEnd: {
-    alignItems: "flex-end"
+    alignItems: "flex-end",
   },
   justifyCenter: {
-    justifyContent: "center"
+    justifyContent: "center",
   },
   justifyStart: {
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
   },
   justifyEnd: {
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
   },
   justifyBetween: {
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   justifyAround: {
-    justifyContent: "space-around"
+    justifyContent: "space-around",
   },
   justifyEvenly: {
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
   },
   selfAlignCenter: {
-    alignSelf: "center"
+    alignSelf: "center",
   },
   selfAlignEnd: {
-    alignSelf: "flex-end"
+    alignSelf: "flex-end",
   },
   selfAlignStart: {
-    alignSelf: "flex-start"
-  }
+    alignSelf: "flex-start",
+  },
 };
 
 export const textInputContainer = {
   ...smallMarginBottom,
-  ...fullWidth
+  ...fullWidth,
 };

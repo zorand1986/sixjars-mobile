@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -13,7 +14,7 @@ const Stack = createNativeStackNavigator();
 
 const headerOptions = {
   headerStyle: {
-    ...appBackgroundColorPrimary
+    ...appBackgroundColorPrimary,
   },
   headerTintColor: colors.textColorPrimary,
   headerTitleStyle: {
@@ -25,34 +26,42 @@ const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen
-      name="Home" 
-      component={Home}
-      options={{
-        title: "Home",
-        ...headerOptions
-      }}
-      />
-    <Stack.Screen
-      name="Setup" 
-      component={Setup}
-      options={{
-        title: "Currency",
-        ...headerOptions
-      }}
+        name="Home"
+        component={Home}
+        options={{
+          title: "Home",
+          ...headerOptions,
+        }}
       />
       <Stack.Screen
-       name="Login" 
-       component={LoginPage}
-      options={{headerShown: false}}
+        name="Setup"
+        component={Setup}
+        options={{
+          title: "Currency",
+          ...headerOptions,
+        }}
       />
-      <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{
+      <Stack.Screen
+        name="Login"
+        component={LoginPage}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ForgotPassword"
+        component={ForgotPassword}
+        options={{
           title: "Forgot Password",
-          ...headerOptions
-        }} />
-      <Stack.Screen name="Signup" component={Signup} options={{
+          ...headerOptions,
+        }}
+      />
+      <Stack.Screen
+        name="Signup"
+        component={Signup}
+        options={{
           title: "Sign Up",
-          ...headerOptions
-        }}  />
+          ...headerOptions,
+        }}
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );
