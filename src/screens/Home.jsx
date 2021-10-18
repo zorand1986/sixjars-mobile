@@ -5,16 +5,17 @@ import {
 } from "react-native";
 import JarListItem from "../components/JarListItem";
 import FloatingButton from "../components/FloatingButton";
+import SectionWrapper from "../components/SectionWrapper";
+import BasicChart from "../components/BasicChart";
+import TransactionListItem from "../components/TransactionListItem";
+import { mockJars, mockData } from "../data/mockData";
+
 import {
   alignments,
   mediumHorizontalPadding,
   appBackgroundColorPrimary,
   smallMarginTop,
 } from "../styles/commonStyles";
-import SectionWrapper from "../components/SectionWrapper";
-import BasicChart from "../components/BasicChart";
-import TransactionListItem from "../components/TransactionListItem";
-import { mockJars, mockData } from "../data/mockData";
 
 const Home = () => {
   const [chartParentWidth, setChartParentWidth] = useState(0);
@@ -37,7 +38,12 @@ const Home = () => {
         >
           <ScrollView style={smallMarginTop}>
             {mockData.map((item, index) => (
-              <TransactionListItem item={item} index={index} data={mockData} />
+              <TransactionListItem
+                key={item?.id}
+                item={item}
+                index={index}
+                data={mockData}
+              />
             ))}
           </ScrollView>
         </SectionWrapper>

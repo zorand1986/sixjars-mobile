@@ -13,7 +13,7 @@ import {
 } from "../styles/commonStyles";
 
 const TransactionListItem = ({ item, index, data }) => (
-  <View key={item.id}>
+  <View>
     <View
       style={[alignments.row, fullWidth, alignments.justifyBetween]}
     >
@@ -31,14 +31,14 @@ const TransactionListItem = ({ item, index, data }) => (
       </View>
     </View>
     {index !== data?.length - 1 && (
-    <View
-      style={[
-        alignments.row,
-        { height: 1 },
-        smallVerticalMargin]}
-    >
-      <Divider />
-    </View>
+      <View
+        style={[
+          alignments.row,
+          { height: 1 },
+          smallVerticalMargin]}
+      >
+        <Divider />
+      </View>
     )}
   </View>
 );
