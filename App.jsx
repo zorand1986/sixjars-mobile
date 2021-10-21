@@ -8,6 +8,7 @@ import Setup from "./src/screens/Setup";
 
 import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
 import Home from "./src/screens/Home";
+import LiquidSwipe from "./src/components/LiquidSwipe";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,11 @@ const headerOptions = {
 const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
+      <Stack.Screen
+        name="LiquidSwipe"
+        component={LiquidSwipe}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="Home"
         component={Home}

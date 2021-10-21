@@ -1,7 +1,8 @@
 export const colors = {
   primary: "#fb09bb",
   secondary: "#03ce54",
-  tertiary: "#FCFE75",
+  tertiary: "#a314fc",
+  variantBlue: "#3d26eb",
   placeholder: "#666666", // for placeholder
   bgPrimary: "#282327",
   bgSecondary: "#2F2F2F",
