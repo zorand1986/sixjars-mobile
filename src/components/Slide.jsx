@@ -1,15 +1,18 @@
 import Color from "color";
 import React from "react";
 import {
-  View, Text, StyleSheet, Dimensions, Image,
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Image,
 } from "react-native";
 import Svg, {
-  RadialGradient, Defs, Rect, Stop,
+  RadialGradient,
+  Defs,
+  Rect,
+  Stop,
 } from "react-native-svg";
-import {
-  primaryBackground, xlMarginTop,
-} from "../styles/commonStyles";
-import Button from "./Button";
 
 const { width, height } = Dimensions.get("screen");
 const SIZE = width - 150;
@@ -42,13 +45,8 @@ const Slide = ({
   slide: {
     picture, color, title, description,
   },
-  isLast,
-  navigation,
 }) => {
   const lighterColor = Color(color).lighten(0.5).toString();
-  const handleContinue = () => {
-    navigation.navigate("Login");
-  };
   return (
     <>
       <Svg style={StyleSheet.absoluteFill}>
@@ -66,15 +64,6 @@ const Slide = ({
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.description}>{description}</Text>
         </View>
-        {isLast && (
-        <View style={[xlMarginTop, { zIndex: 1000 }]}>
-          <Button
-            title="Continue"
-            color={primaryBackground}
-            onPress={handleContinue}
-          />
-        </View>
-        )}
       </View>
     </>
   );
