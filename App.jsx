@@ -9,6 +9,7 @@ import Setup from "./src/screens/Setup";
 import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
 import Home from "./src/screens/Home";
 import LiquidSwipe from "./src/components/LiquidSwipe";
+import MonthlyBudget from "./src/screens/MonthlyBudget";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,15 @@ const App = () => (
           ...headerOptions,
         }}
       />
+      <Stack.Screen
+        name="MonthlyBudget"
+        component={MonthlyBudget}
+        options={{
+          title: "Monthly budget",
+          ...headerOptions,
+        }}
+      />
+
       <Stack.Screen
         name="Setup"
         component={Setup}

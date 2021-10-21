@@ -15,14 +15,14 @@ const slides = [
     picture: require("../../assets/Control.png"),
   },
   {
-    color: colors.variantBlue,
+    color: colors.tertiary,
     title: "Analyze",
     description:
       "Take a deep dive into your montly expenses and incomes.",
     picture: require("../../assets/Analize.png"),
   },
   {
-    color: colors.tertiary,
+    color: colors.variantBlue,
     title: "Achieve",
     description:
       "Make a step forward to realizing your financial goals.",

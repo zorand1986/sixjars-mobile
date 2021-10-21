@@ -21,6 +21,7 @@ const BasicTextInput = ({
   autofocus,
   secureTextEntry,
   error,
+  keyboardType,
 }) => {
   const [focused, setFocused] = useState(false);
   const [secured, setSecured] = useState(secureTextEntry);
@@ -90,6 +91,7 @@ const BasicTextInput = ({
         autofocus={autofocus}
         autoCorrect={false}
         secureTextEntry={secured}
+        keyboardType={keyboardType}
       />
       <TouchableOpacity onPress={handleSecure}>
         {renderSecureIcon()}

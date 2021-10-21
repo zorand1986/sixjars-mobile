@@ -26,7 +26,7 @@ import Divider from "../components/Divider";
 
 const LoginPage = ({ navigation }) => {
   const handleLogin = () => {
-    navigation?.navigate("Signup");
+    navigation?.navigate("Home");
   };
 
   const handleForgotPassword = () => {
