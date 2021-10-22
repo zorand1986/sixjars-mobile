@@ -276,3 +276,8 @@ export const textInputContainer = {
   ...smallMarginBottom,
   ...fullWidth,
 };
+
+export const selectedJarItem = {
+  backgroundColor: colors.tertiary,
+  borderRadius: 10,
+};

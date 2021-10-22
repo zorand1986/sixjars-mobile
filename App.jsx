@@ -5,6 +5,7 @@ import LoginPage from "./src/screens/LoginPage";
 import Signup from "./src/screens/Signup";
 import ForgotPassword from "./src/screens/ForgotPassword";
 import Setup from "./src/screens/Setup";
+import AddExpense from "./src/screens/AddExpense";
 
 import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
 import Home from "./src/screens/Home";
@@ -27,17 +28,25 @@ const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen
-        name="LiquidSwipe"
-        component={LiquidSwipe}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name="Home"
         component={Home}
         options={{
           title: "Home",
           ...headerOptions,
         }}
+      />
+      <Stack.Screen
+        name="AddExpense"
+        component={AddExpense}
+        options={{
+          title: "Add expense",
+          ...headerOptions,
+        }}
+      />
+      <Stack.Screen
+        name="LiquidSwipe"
+        component={LiquidSwipe}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="MonthlyBudget"

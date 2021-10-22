@@ -9,6 +9,7 @@ import SectionWrapper from "../components/SectionWrapper";
 import BasicChart from "../components/BasicChart";
 import TransactionListItem from "../components/TransactionListItem";
 import { mockJars, mockData } from "../data/mockData";
+import PopupModal from "../components/PopupModal";
 
 import {
   alignments,
@@ -17,11 +18,21 @@ import {
   smallMarginTop,
 } from "../styles/commonStyles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [chartParentWidth, setChartParentWidth] = useState(0);
+  const [modalVisible, setModalVisible] = useState(-1);
+
+  const handleCloseModal = () => {
+    setModalVisible(-1);
+  };
 
   return (
-    <>
+    <View style={{ flex: 1 }}>
+      <PopupModal
+        modalVisible={modalVisible > -1}
+        onPress={handleCloseModal}
+        item={mockJars[modalVisible]}
+      />
       <ScrollView
         style={[
           alignments.flex,
@@ -50,25 +61,18 @@ const Home = () => {
         <BasicChart chartParentWidth={chartParentWidth} />
         <SectionWrapper title="jars" style={{ marginBottom: 130 }}>
           <View>
-            {mockJars.map((item) => {
-              const {
-                id, Icon, code, progress, percentage,
-              } = item;
-              return (
-                <JarListItem
-                  key={id}
-                  Icon={Icon}
-                  code={code}
-                  progress={progress}
-                  percentage={percentage}
-                />
-              );
-            })}
+            {mockJars.map((item) => (
+              <JarListItem
+                key={item?.id}
+                item={item}
+                setModalVisible={(id) => setModalVisible(id)}
+              />
+            ))}
           </View>
         </SectionWrapper>
       </ScrollView>
-      <FloatingButton />
-    </>
+      <FloatingButton onPress={() => navigation.navigate("AddExpense")} />
+    </View>
   );
 };
 
