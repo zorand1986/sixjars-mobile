@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { StatusBar, View, Text } from "react-native";
+import { View, Text, StatusBar } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import PopupModal from "../components/PopupModal";
 import {
   alignments,
   appBackgroundColorPrimary,
@@ -19,6 +18,9 @@ import BasicTextInput from "../components/BasicTextInput";
 import Button from "../components/Button";
 import JarListItem from "../components/JarListItem";
 import { mockJars } from "../data/mockData";
+import PopupModal from "../components/PopupModal";
+import { defaultJarValues } from "../data/Constants";
+import { formatNumber } from "../services/simpleFunctions";
 
 const schema = yup.object({
   expense: yup
@@ -30,12 +32,14 @@ const schema = yup.object({
     .required("You must put your expense in one of the jars."),
 });
 
-const AddExpense = () => {
+const AddBudget = () => {
   const [modalVisible, setModalVisible] = useState(-1);
-  const { control, handleSubmit, formState: { errors } } = useForm({
+  const [budgetValue, setBudgetValue] = useState(null);
+  const {
+    control, handleSubmit, formState: { errors }, getValues,
+  } = useForm({
     resolver: yupResolver(schema),
   });
-  // eslint-disable-next-line no-console
   const onSubmit = (data) => console.log(data);
   const handleCloseModal = () => {
     setModalVisible(-1);
@@ -61,13 +65,16 @@ const AddExpense = () => {
               <BasicTextInput
                 error={errors?.expense}
                 onBlur={onBlur}
-                onChangeText={onChange}
+                onChangeText={((val) => {
+                  setBudgetValue(val);
+                  onChange();
+                })}
                 value={value}
                 keyboardType="numeric"
               />
             </>
           )}
-          name="expense"
+          name="budget"
           defaultValue=""
         />
         {errors.expense
@@ -76,17 +83,23 @@ const AddExpense = () => {
           control={control}
           render={({ field: { onChange, value } }) => (
             <>
-              <Text style={labelText}>SelectJar</Text>
-              {mockJars.map((item) => (
-                <JarListItem
-                  selected={value === item?.code}
-                  touchable
-                  onPress={() => onChange(item?.code)}
-                  item={item}
-                  key={item?.id}
-                  setModalVisible={(id) => setModalVisible(id)}
-                />
-              ))}
+              <Text style={labelText}>Jars</Text>
+              {Object.values(defaultJarValues).map((item) => {
+                console.log({ item });
+                return (
+                  <JarListItem
+                    selected={value === item?.code}
+                    onPress={() => onChange(item?.code)}
+                    item={item}
+                    key={item?.id}
+                    setModalVisible={(id) => setModalVisible(id)}
+                    availableAmount={
+                          formatNumber(budgetValue
+                            * item?.progress)
+                        }
+                  />
+                );
+              })}
             </>
           )}
           name="jar"
@@ -94,25 +107,6 @@ const AddExpense = () => {
         />
         {<errors className="jar" />
               && <Text style={errorText}>{errors?.jar?.message}</Text>}
-        <Controller
-          control={control}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <>
-              <Text style={labelText}>Note</Text>
-              <BasicTextInput
-                error={errors?.note}
-                onBlur={onBlur}
-                onChangeText={onChange}
-                value={value}
-                keyboardType="numeric"
-              />
-            </>
-          )}
-          name="note"
-          defaultValue=""
-        />
-        {errors.note
-              && <Text style={errorText}>{errors?.note?.message}</Text>}
       </View>
       <View style={[alignments.row, alignments.justifyEnd]}>
         <Button
@@ -126,4 +120,4 @@ const AddExpense = () => {
   );
 };
 
-export default AddExpense;
+export default AddBudget;

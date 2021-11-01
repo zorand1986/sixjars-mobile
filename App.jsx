@@ -11,6 +11,7 @@ import { appBackgroundColorPrimary, colors } from "./src/styles/commonStyles";
 import Home from "./src/screens/Home";
 import LiquidSwipe from "./src/components/LiquidSwipe";
 import MonthlyBudget from "./src/screens/MonthlyBudget";
+import AddBudget from "./src/screens/AddBudget";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,14 @@ const headerOptions = {
 const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
+      <Stack.Screen
+        name="AddBydget"
+        component={AddBudget}
+        options={{
+          title: "Add Budget",
+          ...headerOptions,
+        }}
+      />
       <Stack.Screen
         name="Home"
         component={Home}

@@ -13,7 +13,9 @@ const JarListItem = ({
   touchable,
   onPress,
   setModalVisible,
+  availableAmount,
 }) => {
+  console.log({ availableAmount });
   const Wrapper = touchable ? TouchableOpacity : View;
   const {
     Icon, code, progress, percentage,
@@ -48,7 +50,14 @@ const JarListItem = ({
       <View>
         <ProgressBar width={progress * 200} />
       </View>
-      <Text style={[basicText, { width: 35 }]}>{percentage}</Text>
+      <Text style={[
+        basicText,
+        { width: 35 },
+      ]}
+      >
+        {availableAmount ?? percentage}
+
+      </Text>
       <TouchableOpacity onPressOut={() => setModalVisible(item?.id - 1)}>
         <QuestionMark
           width={17}

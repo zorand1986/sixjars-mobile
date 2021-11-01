@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { LineChart } from "react-native-chart-kit";
 import Svg, { Text } from "react-native-svg";
 import { colors } from "../styles/commonStyles";
+import { dataset1, averageData } from "../data/mockData";
 
 const bottomLabels = Array.from({ length: 31 }).map((item, index) => index + 1);
 
@@ -29,10 +30,10 @@ const BasicChart = ({ chartParentWidth }) => (
         labels: bottomLabels,
         datasets: [
           {
-            data: Array.from({ length: 31 }).map(() => Math.random() * 100),
+            data: dataset1,
           },
           {
-            data: Array.from({ length: 31 }).map(() => 50),
+            data: averageData,
             color: () => "white", // optional
             strokeWidth: 1, // optional
             withDots: false,
@@ -40,7 +41,7 @@ const BasicChart = ({ chartParentWidth }) => (
           },
         ],
       }}
-      decorator={chartDecorator}
+      // decorator={chartDecorator}
       width={chartParentWidth} // from react-native
       height={250}
       yAxisLabel="$"
