@@ -29,6 +29,14 @@ const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen
+        name="AddExpense"
+        component={AddExpense}
+        options={{
+          title: "Add expense",
+          ...headerOptions,
+        }}
+      />
+      <Stack.Screen
         name="AddBydget"
         component={AddBudget}
         options={{
@@ -41,14 +49,6 @@ const App = () => (
         component={Home}
         options={{
           title: "Home",
-          ...headerOptions,
-        }}
-      />
-      <Stack.Screen
-        name="AddExpense"
-        component={AddExpense}
-        options={{
-          title: "Add expense",
           ...headerOptions,
         }}
       />

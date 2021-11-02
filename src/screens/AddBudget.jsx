@@ -36,7 +36,7 @@ const AddBudget = () => {
   const [modalVisible, setModalVisible] = useState(-1);
   const [budgetValue, setBudgetValue] = useState(null);
   const {
-    control, handleSubmit, formState: { errors }, getValues,
+    control, handleSubmit, formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });

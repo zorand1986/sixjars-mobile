@@ -15,7 +15,6 @@ const JarListItem = ({
   setModalVisible,
   availableAmount,
 }) => {
-  console.log({ availableAmount });
   const Wrapper = touchable ? TouchableOpacity : View;
   const {
     Icon, code, progress, percentage,

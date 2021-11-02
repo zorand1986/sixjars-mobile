@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { StatusBar, View, Text } from "react-native";
+import {
+  StatusBar, View, Text,
+} from "react-native";
+import CheckBox from "@react-native-community/checkbox";
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,6 +17,9 @@ import {
   errorText,
   primaryBackground,
   smallHorizontalMargin,
+  mediumVerticalMargin,
+  smallHorizontalPadding,
+  colors,
 } from "../styles/commonStyles";
 import BasicTextInput from "../components/BasicTextInput";
 import Button from "../components/Button";
@@ -110,6 +116,39 @@ const AddExpense = () => {
           )}
           name="note"
           defaultValue=""
+        />
+        {errors.note
+              && <Text style={errorText}>{errors?.note?.message}</Text>}
+        <Controller
+          control={control}
+          render={({ field: { onChange, value } }) => (
+            <View style={[
+              alignments.row,
+              alignments.alignCenter,
+              mediumVerticalMargin,
+              { height: 51 }]}
+            >
+              <CheckBox
+                onValueChange={onChange}
+                value={value}
+                onAnimationType="one-stroke"
+                offAnimationType="one-stroke"
+                onTintColor={colors.secondary}
+                onCheckColor={colors.secondary}
+              />
+              <Text style={[
+                labelText,
+                alignments.selfAlignCenter,
+                smallHorizontalPadding,
+              ]}
+              >
+                Mark as unnecessary expense
+
+              </Text>
+            </View>
+          )}
+          name="unnecessary"
+          defaultValue={false}
         />
         {errors.note
               && <Text style={errorText}>{errors?.note?.message}</Text>}
