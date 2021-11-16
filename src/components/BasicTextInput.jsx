@@ -22,6 +22,7 @@ const BasicTextInput = ({
   secureTextEntry,
   error,
   keyboardType,
+  autoCapitalize,
 }) => {
   const [focused, setFocused] = useState(false);
   const [secured, setSecured] = useState(secureTextEntry);
@@ -84,6 +85,7 @@ const BasicTextInput = ({
           textColorPrimary,
           inputStyles]}
         onBlur={handleBlur}
+        autoCapitalize={autoCapitalize || "sentences"}
         onChangeText={onChangeText}
         value={value}
         onChange={onChange}
