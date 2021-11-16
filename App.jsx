@@ -29,6 +29,16 @@ const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen
+        name="LiquidSwipe"
+        component={LiquidSwipe}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Login"
+        component={LoginPage}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="AddExpense"
         component={AddExpense}
         options={{
@@ -37,7 +47,7 @@ const App = () => (
         }}
       />
       <Stack.Screen
-        name="AddBydget"
+        name="AddBudget"
         component={AddBudget}
         options={{
           title: "Add Budget",
@@ -51,11 +61,6 @@ const App = () => (
           title: "Home",
           ...headerOptions,
         }}
-      />
-      <Stack.Screen
-        name="LiquidSwipe"
-        component={LiquidSwipe}
-        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="MonthlyBudget"
@@ -73,11 +78,6 @@ const App = () => (
           title: "Currency",
           ...headerOptions,
         }}
-      />
-      <Stack.Screen
-        name="Login"
-        component={LoginPage}
-        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="ForgotPassword"

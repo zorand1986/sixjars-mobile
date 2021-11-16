@@ -31,7 +31,7 @@ const slides = [
   {},
 ];
 
-const LiquidSwipe = () => {
+const LiquidSwipe = ({ navigation }) => {
   const [index, setIndex] = useState(0);
   const prev = slides[index - 1];
   const next = slides[index + 1];
@@ -45,7 +45,7 @@ const LiquidSwipe = () => {
     >
       {slides?.[index].color
         ? <Slide isLast={!next} slide={slides?.[index]} />
-        : <LoginPage /> }
+        : <LoginPage navigation={navigation} /> }
     </Slider>
   );
 };
